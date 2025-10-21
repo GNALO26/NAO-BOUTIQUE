@@ -3,9 +3,12 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   images: {
-    unoptimized: true
+    unoptimized: true,
+    domains: ['via.placeholder.com'],
+  },
+  experimental: {
+    appDir: true,
   }
-  // Supprimer la section experimental qui n'est plus nécessaire
 }
 
 module.exports = nextConfig
