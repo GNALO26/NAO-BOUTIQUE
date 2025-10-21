@@ -280,7 +280,7 @@ export default function Home() {
               Prêt à équiper votre espace numérique ?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Contactez-nous pour un conseil personnalisé et découvrez la différence G-L NAO Tech
+              Contactez-nous pour un conseil personnalisé et découvrez la différence G-L NAO Services
             </p>
             <a 
               href="https://wa.me/0156035888?text=Bonjour! Je suis intéressé par vos produits"

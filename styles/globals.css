@@ -48,9 +48,44 @@ main {
   flex-direction: column;
 }
 
-/* Footer toujours en bas */
+/* ===== FOOTER CORRIGÉ ===== */
 footer {
+  background: #111827;
+  color: white;
+  width: 100%;
+  margin-top: auto;
+  position: relative;
+  z-index: 100;
   flex-shrink: 0;
+}
+
+/* Garantir que le footer est toujours visible */
+footer * {
+  position: relative;
+  z-index: 101;
+}
+
+/* ===== CORRECTION DES SUPERPOSITIONS ===== */
+/* S'assurer que rien ne cache le footer */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+/* ===== CORRECTION DES SECTIONS ===== */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Dernière section ne doit pas cacher le footer */
+section:last-of-type {
+  margin-bottom: 0;
 }
 
 /* ===== CONTAINER UNIFORME ===== */
