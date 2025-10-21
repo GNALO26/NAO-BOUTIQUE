@@ -28,7 +28,7 @@ export default function ProductDetails({ product }) {
   }
 
   const benefits = [
-    { icon: Shield, text: "Garantie 2 ans", description: "Support technique inclus" },
+    { icon: Shield, text: "Garantie 12 mois", description: "Support technique inclus" },
     { icon: Truck, text: "Livraison gratuite", description: "Sous moins de 6h à Cotonou" },
     { icon: Check, text: "Installation gratuite", description: "Configuration complète" }
   ]
