@@ -1,24 +1,24 @@
 import { useState } from 'react'
 import { Menu, X, ShoppingCart, Search, Phone } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
     { name: 'Accueil', href: '/' },
-    { name: 'PC de Bureau', href: '/category/pc' },
+    { name: 'PC de Bureau', href: '/category/pc-bureau' },
     { name: 'Laptops', href: '/category/laptops' },
-    { name: 'Accessoires', href: '/category/accessories' },
-    { name: 'Composants', href: '/category/components' },
+    { name: 'Accessoires', href: '/category/accessoires' },
   ]
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-4">
+    <header className="bg-white shadow-lg sticky top-0 z-50 w-full">
+      <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-accent-500 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-orange-500 rounded-xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">GL</span>
             </div>
             <div>
@@ -30,27 +30,18 @@ export default function Header() {
           {/* Navigation Desktop */}
           <nav className="hidden lg:flex items-center gap-8">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Actions Desktop */}
           <div className="hidden lg:flex items-center gap-4">
-            <button className="p-2 text-gray-600 hover:text-primary-600 transition-colors">
-              <Search className="w-5 h-5" />
-            </button>
-            <button className="p-2 text-gray-600 hover:text-primary-600 transition-colors relative">
-              <ShoppingCart className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                0
-              </span>
-            </button>
             <a 
               href="https://wa.me/0156035888"
               className="btn-primary text-sm flex items-center gap-2"
@@ -74,14 +65,14 @@ export default function Header() {
           <div className="lg:hidden py-4 border-t border-gray-200 animate-slide-up">
             <nav className="flex flex-col gap-4">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-primary-600 font-medium py-2"
+                  className="text-gray-700 hover:text-blue-600 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="pt-4 border-t border-gray-200">
                 <a 
