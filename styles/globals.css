@@ -61,7 +61,8 @@ footer {
 
 /* Garantir que le footer est toujours visible */
 footer * {
-  position: relative;
+  text-align: center;
+  position: absolute;
   z-index: 101;
 }
 
