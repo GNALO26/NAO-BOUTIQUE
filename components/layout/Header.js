@@ -55,7 +55,7 @@ export default function Header() {
           {/* Actions Desktop */}
           <div className="header-actions hidden lg:flex">
             <a 
-              href="https://wa.me/0156035888"
+              href="https://wa.me/2290156035888"
               className="header-action-btn whatsapp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -96,7 +96,7 @@ export default function Header() {
               
               <div className="flex flex-col gap-2 p-4 border-t border-gray-200 mt-2">
                 <a 
-                  href="https://wa.me/0156035888"
+                  href="https://wa.me/2290156035888"
                   className="header-action-btn whatsapp justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >

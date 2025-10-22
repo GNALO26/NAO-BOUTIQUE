@@ -58,7 +58,7 @@ export default function Footer() {
             
             <div className="mt-6">
               <a 
-                href="https://wa.me/0156035888"
+                href="https://wa.me/2290156035888"
                 className="btn btn-whatsapp w-full justify-center"
               >
                 <MessageCircle className="w-4 h-4" />
