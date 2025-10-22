@@ -35,67 +35,51 @@ body {
   flex-direction: column;
 }
 
-/* ===== HEADER AMÉLIORÉ ===== */
-header {
-  background: white;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-}
-
-/* Navigation avec bon espacement */
+/* ===== HEADER ESPACÉ ===== */
 .header-nav a {
-  position: relative;
-  padding: 0.5rem 0;
-  margin: 0 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0.25rem;
 }
 
-/* Animation de soulignement */
-.header-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  transition: width 0.3s ease;
+/* Espacement entre les éléments de navigation */
+.header-nav {
+  gap: 2rem !important;
 }
 
-.header-nav a:hover::after {
-  width: 100%;
+/* Alignement vertical des boutons */
+.header-actions {
+  align-items: center;
 }
 
-/* Boutons d'action */
-.header-actions a {
-  transition: all 0.3s ease;
+/* ===== FOOTER COMPACT ===== */
+footer {
+  background: #111827;
+  font-size: 0.875rem;
 }
 
-.header-actions a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* Réduire l'espacement dans le footer */
+footer .container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-/* Menu mobile amélioré */
-.mobile-menu {
-  background: white;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+/* Colonnes bien alignées */
+.footer-grid {
+  display: grid;
+  gap: 2rem;
 }
 
-.mobile-menu a {
-  border-bottom: 1px solid #f3f4f6;
-  transition: all 0.2s ease;
+/* Liens compacts */
+.footer-links {
+  display: grid;
+  gap: 0.5rem;
 }
 
-.mobile-menu a:hover {
-  background: #f8fafc;
-  padding-left: 1.5rem;
-}
-
-.mobile-menu a:last-child {
-  border-bottom: none;
+/* CTA compact */
+.footer-cta {
+  background: #1f2937;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 /* Main content prend tout l'espace disponible */
@@ -106,25 +90,6 @@ main {
   flex-direction: column;
 }
 
-/* ===== FOOTER CENTRÉ ===== */
-footer {
-  background: #111827;
-  color: white;
-  width: 100%;
-  margin-top: auto;
-  position: relative;
-  z-index: 100;
-  flex-shrink: 0;
-  text-align: center;
-}
-
-/* Garantir que tout dans le footer est centré */
-footer .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 /* Animation pour les icônes sociales */
 .social-icon {
