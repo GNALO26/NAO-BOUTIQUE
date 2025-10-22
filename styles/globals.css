@@ -35,9 +35,67 @@ body {
   flex-direction: column;
 }
 
-/* Header toujours en haut */
+/* ===== HEADER AMÉLIORÉ ===== */
 header {
-  flex-shrink: 0;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Navigation avec bon espacement */
+.header-nav a {
+  position: relative;
+  padding: 0.5rem 0;
+  margin: 0 0.5rem;
+}
+
+/* Animation de soulignement */
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transition: width 0.3s ease;
+}
+
+.header-nav a:hover::after {
+  width: 100%;
+}
+
+/* Boutons d'action */
+.header-actions a {
+  transition: all 0.3s ease;
+}
+
+.header-actions a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Menu mobile amélioré */
+.mobile-menu {
+  background: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu a {
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  background: #f8fafc;
+  padding-left: 1.5rem;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
 }
 
 /* Main content prend tout l'espace disponible */
@@ -48,7 +106,7 @@ main {
   flex-direction: column;
 }
 
-/* ===== FOOTER CORRIGÉ ===== */
+/* ===== FOOTER CENTRÉ ===== */
 footer {
   background: #111827;
   color: white;
@@ -57,35 +115,36 @@ footer {
   position: relative;
   z-index: 100;
   flex-shrink: 0;
+  text-align: center;
 }
 
-/* Garantir que le footer est toujours visible */
-footer * {
-  position: relative;
-  z-index: 101;
+/* Garantir que tout dans le footer est centré */
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ===== CORRECTION DES SUPERPOSITIONS ===== */
-/* S'assurer que rien ne cache le footer */
-main {
-  position: relative;
-  z-index: 1;
+/* Animation pour les icônes sociales */
+.social-icon {
+  transition: all 0.3s ease;
 }
 
-header {
-  position: relative;
-  z-index: 1000;
+.social-icon:hover {
+  transform: scale(1.2);
 }
 
-/* ===== CORRECTION DES SECTIONS ===== */
-section {
-  position: relative;
-  z-index: 1;
-}
-
-/* Dernière section ne doit pas cacher le footer */
-section:last-of-type {
-  margin-bottom: 0;
+/* Responsive pour le footer */
+@media (max-width: 768px) {
+  footer .container {
+    padding: 2rem 1rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 /* ===== CONTAINER UNIFORME ===== */

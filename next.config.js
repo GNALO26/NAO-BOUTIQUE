@@ -5,9 +5,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
     domains: ['via.placeholder.com'],
-  },
-  experimental: {
-    appDir: true,
   }
 }
 
