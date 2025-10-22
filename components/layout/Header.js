@@ -16,52 +16,54 @@ export default function Header() {
   ]
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50 w-full">
+    <header>
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity flex-shrink-0">
-            <div className="w-12 h-12 relative">
+            <div className="w-10 h-10 relative">
               <Image
                 src="/images/logo.jpg"
                 alt="G-L NAO Services"
-                width={48}
-                height={48}
+                width={40}
+                height={40}
                 className="rounded-lg object-cover"
                 priority
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900">G-L NAO Services</h1>
+              <h1 className="text-lg font-bold text-gray-900">G-L NAO Services</h1>
               <p className="text-xs text-gray-500">Expert Informatique</p>
             </div>
           </Link>
 
-          {/* Navigation Desktop - BIEN ESPACÉE */}
-          <nav className="hidden lg:flex items-center gap-8 mx-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-1 whitespace-nowrap"
-              >
-                {item.name}
-              </Link>
-            ))}
+          {/* Navigation Desktop */}
+          <nav className="header-nav hidden lg:block">
+            <div className="header-nav-links">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="header-nav-link"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </nav>
 
-          {/* Actions Desktop - Alignées avec navigation */}
-          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+          {/* Actions Desktop */}
+          <div className="header-actions hidden lg:flex">
             <a 
               href="https://wa.me/0156035888"
-              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 text-sm"
+              className="header-action-btn whatsapp"
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp</span>
             </a>
             <a 
               href="tel:0156035888"
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 text-sm"
+              className="header-action-btn phone"
             >
               <Phone className="w-4 h-4" />
               <span>Appeler</span>
@@ -70,7 +72,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-3 text-gray-600 hover:text-blue-600 transition-colors"
+            className="lg:hidden p-2 text-gray-600 hover:text-blue-600 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -79,7 +81,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 animate-slide-up bg-white">
+          <div className="lg:hidden border-t border-gray-200 bg-white">
             <nav className="flex flex-col py-4">
               {navigation.map((item) => (
                 <Link
@@ -92,10 +94,10 @@ export default function Header() {
                 </Link>
               ))}
               
-              <div className="flex gap-3 p-4 border-t border-gray-200 mt-2">
+              <div className="flex flex-col gap-2 p-4 border-t border-gray-200 mt-2">
                 <a 
                   href="https://wa.me/0156035888"
-                  className="flex-1 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 text-sm"
+                  className="header-action-btn whatsapp justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <MessageCircle className="w-4 h-4" />
@@ -103,7 +105,7 @@ export default function Header() {
                 </a>
                 <a 
                   href="tel:0156035888"
-                  className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 text-sm"
+                  className="header-action-btn phone justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Phone className="w-4 h-4" />
