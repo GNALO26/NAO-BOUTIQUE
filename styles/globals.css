@@ -29,11 +29,6 @@ body {
 }
 
 /* ===== STRUCTURE PRINCIPALE ===== */
-#__next {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 
 /* ===== HEADER ESPACÉ ===== */
 .header-nav a {
@@ -50,6 +45,13 @@ body {
 .header-actions {
   align-items: center;
 }
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 /* ===== FOOTER COMPACT ===== */
 footer {
